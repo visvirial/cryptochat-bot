@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "extend": "^3.0.0",
+    "request": "^2.72.0",
     "signalr-client": "0.0.16",
     "slack-node": "^0.2.0",
     "socket.io-client": "^1.4.6"
