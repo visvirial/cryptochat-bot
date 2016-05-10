@@ -12,7 +12,7 @@ Slack.prototype.send = function(user, msg) {
 	this.slack.webhook({
 		channel: this.config.channel,
 		username: user,
-		//icon_emoji: ,
+		icon_emoji: 'http://identicon.relucks.org/'+encodeURIComponent(user)+'?size=64',
 		text: msg,
 	}, function(err, res) {
 		if(err) console.log(err);
