@@ -11,7 +11,7 @@ Slack.prototype.send = function(service, user, msg) {
 	console.log('[Slack] sending message... [user='+user+', msg='+msg+']');
 	this.slack.webhook({
 		channel: this.config.channel,
-		username: '['+service+']'+user,
+		username: '['+service+'] '+user,
 		icon_emoji: 'http://identicon.relucks.org/'+encodeURIComponent(user)+'?size=64',
 		text: msg,
 	}, function(err, res) {
