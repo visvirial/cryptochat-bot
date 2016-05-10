@@ -7,19 +7,22 @@
 		"slack": {
 			"endpoint": "__SLACK_WEBHOOK_URL__",
 			"channel": "#YOUR_FAVORITE_CHANNEL"
-		}
+		},
+		"enabled": true
 	},
 	"coincheck": {
 		"slack": {
 			"endpoint": "__SLACK_WEBHOOK_URL__",
 			"channel": "#YOUR_FAVORITE_CHANNEL"
 		},
-		"fetch_interval": 5000
+		"fetch_interval": 10000,
+		"enabled": true
 	},
 	"bitflyer": {
 		"slack": {
 			"endpoint": "__SLACK_WEBHOOK_URL__",
 			"channel": "#YOUR_FAVORITE_CHANNEL"
-		}
+		},
+		"enabled": true
 	}
 }
