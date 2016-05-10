@@ -3,15 +3,23 @@
   "version": "0.0.0",
   "description": "Relay chat message at cryptocurrency exchanges to Slack channels.",
   "author": "Vis Virial <visvirial@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": [],
+  "keywords": [
+    "Bitcoin",
+    "Cryptocurrency",
+    "Zaif",
+    "BitFlyer",
+    "coincheck"
+  ],
   "repository": {
     "type": "git",
     "url": ""
   },
   "dependencies": {
+    "signalr-client": "0.0.16",
     "slack-node": "^0.2.0",
     "socket.io-client": "^1.4.6"
   },
