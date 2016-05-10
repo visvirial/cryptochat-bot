@@ -13,12 +13,11 @@ var ZaifChat = function(config) {
 	});
 	this.socket.on('say', function(data) {
 		console.log('[ZaifChat] new message from user='+data.name+': '+data.msg);
-		console.log(data);
 		this_.slack.send(data.name, data.msg);
 	});
 	this.socket.on('enter', function(data) {
 		console.log('[ZaifChat] user='+data.name+' entered');
-		console.log(data);
+		this_.slack.send('Administrator', '`'+data.name+'` が入室しました。');
 	});
 };
 
