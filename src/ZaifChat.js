@@ -7,7 +7,6 @@ var ZaifChat = function(config) {
 	var this_ = this;
 	this.socket.on('connect', function() {
 		console.log('[ZaifChat] connected.');
-		this_.slack.send('てすと', 'これはテストです.');
 	});
 	this.socket.on('disconnect', function() {
 		console.log('[ZaifChat] disconnected.');
