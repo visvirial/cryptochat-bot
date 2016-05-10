@@ -1,7 +1,17 @@
 
+var extend = require('extend');
+
 var config = require('./config.json');
 
-var zaif = new require('./src/ZaifChat.js')(config.zaif);
-var coincheck = new require('./src/CoincheckChat.js')(config.coincheck);
-var bitflyer = new require('./src/BitFlyerChat.js')(config.bitflyer);
+var exchanges = {
+	zaif: 'Zaif',
+	coincheck: 'Coincheck',
+	bitflyer: 'BitFlyer',
+};
+
+for(var key in exchanges) {
+	var val = exchanges[key];
+	config[key].slack = extend({}, config.slack, config[key].slack);
+	new require('./src/'+val+'Chat.js')(config[key]);
+}
 
