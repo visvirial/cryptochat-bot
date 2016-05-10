@@ -18,7 +18,7 @@ var CoincheckChat = function(config) {
 			}
 			var json = JSON.parse(body);
 			json.chats.forEach(function(chat) {
-				if(!first) this.slack.send(chat.name, chat.content);
+				if(!first) this.slack.send('coincheck', chat.name, chat.content);
 				this.last_id = chat.id;
 			});
 		});

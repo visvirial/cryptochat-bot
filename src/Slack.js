@@ -7,11 +7,11 @@ var Slack = function(config) {
 	this.slack.setWebhook(config.endpoint);
 };
 
-Slack.prototype.send = function(user, msg) {
+Slack.prototype.send = function(service, user, msg) {
 	console.log('[Slack] sending message... [user='+user+', msg='+msg+']');
 	this.slack.webhook({
 		channel: this.config.channel,
-		username: user,
+		username: '['+service+']'+user,
 		icon_emoji: 'http://identicon.relucks.org/'+encodeURIComponent(user)+'?size=64',
 		text: msg,
 	}, function(err, res) {
