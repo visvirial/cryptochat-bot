@@ -16,3 +16,8 @@ for(var key in exchanges) {
 	new require('./src/'+val+'Chat.js')(config[key]);
 }
 
+setTimeout(function() {
+	console.log('I: exiting...');
+	process.exit(0);
+}, 4*60*60*1000);
+
