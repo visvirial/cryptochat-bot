@@ -22,7 +22,7 @@ var CoincheckChat = function(config) {
 					if(!first) this.slack.send('coincheck', chat.name, chat.content);
 					this.last_id = chat.id;
 				});
-			} catch(SyntaxError e) {
+			} catch(e) {
 				console.log('[CoincheckChat] failed to parse JSON: ' + body);
 			}
 		});
