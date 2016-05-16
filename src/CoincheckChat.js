@@ -16,11 +16,15 @@ var CoincheckChat = function(config) {
 				console.log('[CoincheckChat] failed to fetch recent chat messages', err);
 				return;
 			}
-			var json = JSON.parse(body);
-			json.chats.forEach(function(chat) {
-				if(!first) this.slack.send('coincheck', chat.name, chat.content);
-				this.last_id = chat.id;
-			});
+			try {
+				var json = JSON.parse(body);
+				json.chats.forEach(function(chat) {
+					if(!first) this.slack.send('coincheck', chat.name, chat.content);
+					this.last_id = chat.id;
+				});
+			} catch(SyntaxError e) {
+				console.log('[CoincheckChat] failed to parse JSON: ' + body);
+			}
 		});
 	};
 	this.fetch(true);
