@@ -1,7 +1,13 @@
 {
 	"slack": {
 		"endpoint": "__SLACK_WEBHOOK_URL__",
-		"channel": "#YOUR_FAVORITE_CHANNEL"
+		"channel": "#YOUR_FAVORITE_CHANNEL",
+		"enabled": true
+	},
+	"telegram": {
+		"token": "__TELEGRAM_BOT_TOKEN__",
+		"chat_id": 123456789,
+		"enabled": true
 	},
 	"zaif": {
 		"slack": {
