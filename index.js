@@ -13,6 +13,7 @@ for(var key in exchanges) {
 	var val = exchanges[key];
 	if(!config[key].enabled) continue;
 	config[key].slack = extend({}, config.slack, config[key].slack);
+	config[key].telegram = extend({}, config.telegram, config[key].telegram);
 	new require('./src/'+val+'Chat.js')(config[key]);
 }
 
