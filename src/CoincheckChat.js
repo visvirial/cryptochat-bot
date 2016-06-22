@@ -1,9 +1,9 @@
 
-var Slack = require('./Slack.js');
+var Destination = require('./Destination.js');
 var request = require('request');
 
 var CoincheckChat = function(config) {
-	this.slack = new Slack(config.slack);
+	this.dest = new Destination(config);
 	this.config = config;
 	this.last_id = null;
 	this.fetch = function(first) {
@@ -19,7 +19,7 @@ var CoincheckChat = function(config) {
 			try {
 				var json = JSON.parse(body);
 				json.chats.forEach(function(chat) {
-					if(!first) this.slack.send('coincheck', chat.name, chat.content);
+					if(!first) this.dest.send('coincheck', chat.name, chat.content);
 					this.last_id = chat.id;
 				});
 			} catch(e) {
