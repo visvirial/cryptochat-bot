@@ -1,10 +1,10 @@
-cryptochat2slack
-================
+cryptochat-bot
+===============
 
 Introduction
 ------------
 
-This repository provides simple scripts that relays chat messages sent on cryptocurrency exchanges to your Slack channel.
+This repository provides simple scripts that relays chat messages sent on cryptocurrency exchanges to Slack and/or Telegram.
 
 Currently, following exchanges are supported.
 
@@ -18,8 +18,8 @@ Setup
 -----
 
 ``` bash
-$ git clone https://github.com/visvirial/cryptochat2slack.git
-$ cd cryptochat2slack
+$ git clone https://github.com/visvirial/cryptochat-bot.git
+$ cd cryptochat-bot
 $ npm install
 $ cp config.sample.json config.json
 ```
