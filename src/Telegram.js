@@ -8,7 +8,7 @@ var Telegram = function(config) {
 
 Telegram.prototype.send = function(service, user, msg) {
 	console.log('[Telegram] sending message... [user='+user+', msg='+msg+']');
-	this.telegram.sendMessage(this.config.chat_id, '['+service+'] '+user+'\n'+msg);
+	this.telegram.sendMessage(this.config.chat_id, '*['+service+'] '+user+'*\n'+msg, {parse_mode: 'Markdown'});
 };
 
 module.exports = Telegram;
